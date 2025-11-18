@@ -22,7 +22,7 @@ export function Header() {
     <header className="fixed top-0 left-0 w-full border-b bg-white/80 backdrop-blur-sm z-50">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 items-center px-4">
         <div className="flex items-center p-0">
-          <img src="/logo.png" alt="Sócio Hub Logo" className="p-0 h-22" />
+          <img src="/logo.png" alt="Sócio Hub Logo" className="p-0 h-18 md:h-22" />
         </div>
 
         <nav className="hidden md:flex justify-center">
