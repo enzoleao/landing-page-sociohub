@@ -36,8 +36,8 @@ const integrations: Integration[] = [
 
 export function IntegrationsSection() {
     return (
-    <section id="integrations" className="bg-slate-50 py-20 scroll-mt-16">
-        <div className="container max-w-6xl mx-auto px-6">
+    <section id="integrations" className="bg-slate-50 py-16 md:py-20 scroll-mt-16">
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold">Integrações Disponíveis</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">

@@ -75,8 +75,8 @@ const CheckIcon = (
 
 
 export function FeatureSection() {
-    return (
-    <section id="features" className="container max-w-6xl mx-auto py-20 px-6 scroll-mt-16">
+  return (
+  <section id="features" className="container max-w-6xl mx-auto py-16 md:py-20 px-4 sm:px-6 scroll-mt-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold">Funcionalidades Completas</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ export function FeatureSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {featureCards.map((f) => (
             <div key={f.title} className="flex flex-col items-center text-center p-6">
               <div className={`w-16 h-16 rounded-full ${f.iconBg} flex items-center justify-center mb-4`}>{f.icon}</div>
@@ -119,7 +119,7 @@ export function FeatureSection() {
             </div>
           );
           return (
-            <div key={sec.title} className="grid md:grid-cols-2 items-center gap-10 mb-16">
+            <div key={sec.title} className="grid md:grid-cols-2 items-center gap-8 md:gap-10 mb-12 md:mb-16">
               {sec.imageFirst ? imageBlock : textBlock}
               {sec.imageFirst ? textBlock : imageBlock}
             </div>

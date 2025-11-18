@@ -1,8 +1,8 @@
 export function FooterSection() {
     return (
               <footer className="bg-slate-900 text-slate-200 py-16">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-primary">SUA LOGO</h3>
               <p className="mt-4 text-sm text-slate-300 max-w-xs">
@@ -51,7 +51,7 @@ export function FooterSection() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400">
+          <div className="mt-8 border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
             <div>© {new Date().getFullYear()} Sócio Hub. Todos os direitos reservados.</div>
          
           </div>

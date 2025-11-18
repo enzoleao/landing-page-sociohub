@@ -3,14 +3,14 @@ import { Button } from "./ui/button";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-gray-50 scroll-mt-16">
-        <div className="container max-w-6xl mx-auto px-6">
+    <section id="contact" className="py-16 md:py-20 bg-gray-50 scroll-mt-16">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold">Entre em Contato</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Tem dúvidas? Nossa equipe está pronta para ajudar você a escolher o melhor plano</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
             <div>
               <h3 className="text-xl font-semibold mb-6">Fale Conosco</h3>
 
@@ -47,7 +47,7 @@ export function ContactSection() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-2xl">
+            <div className="bg-white rounded-2xl p-5 md:p-6 shadow-2xl">
               <form className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Nome</label>

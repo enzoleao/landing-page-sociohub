@@ -35,14 +35,14 @@ const testimonials: Testimonial[] = [
 
 export function ClientFeedbackSetion() {
     return (
-        <section id="reviews" className="py-20 scroll-mt-16">
-        <div className="container max-w-6xl mx-auto px-6">
+    <section id="reviews" className="py-16 md:py-20 scroll-mt-16">
+    <div className="container max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold">O que nossos clientes dizem</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Veja como estamos transformando a gestão de associações pelo Brasil</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <div key={t.author} className="bg-white rounded-xl p-6 shadow-sm">
                 <div className="flex items-start gap-3 mb-3">
