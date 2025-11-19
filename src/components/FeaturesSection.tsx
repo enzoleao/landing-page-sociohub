@@ -1,3 +1,7 @@
+import { EmblaOptionsType } from 'embla-carousel'
+import EmblaCarousel from './FeaturesCarousel';
+
+
 type FeatureCard = { title: string; description: string; iconBg: string; icon: React.ReactNode };
 const featureCards: FeatureCard[] = [
   {
@@ -22,6 +26,22 @@ const featureCards: FeatureCard[] = [
     iconBg: "bg-purple-50",
     icon: (
       <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
+    ),
+  }, 
+  {
+    title: "Personalização de Planos",
+    description: "Ofereça diferentes planos de associação com benefícios exclusivos para cada categoria.",
+    iconBg: "bg-yellow-50",
+    icon: (
+      <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
+    ),
+  },  
+  {
+    title: "Controle de permissões",
+    description: "Defina diferentes níveis de acesso para administradores, gerentes e associados.",
+    iconBg: "bg-yellow-50",
+    icon: (
+      <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
     ),
   },
 ];
@@ -72,6 +92,10 @@ const CheckIcon = (
   </span>
 );
 
+const OPTIONS: EmblaOptionsType = { loop: true }
+const SLIDE_COUNT = 8
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
 
 
 export function FeatureSection() {
@@ -84,19 +108,13 @@ export function FeatureSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-          {featureCards.map((f) => (
-            <div key={f.title} className="flex flex-col items-center text-center p-6">
-              <div className={`w-16 h-16 rounded-full ${f.iconBg} flex items-center justify-center mb-4`}>{f.icon}</div>
-              <h3 className="font-semibold mb-2">{f.title}</h3>
-              <p className="text-muted-foreground">{f.description}</p>
-            </div>
-          ))}
+        <div className="gap-6 md:gap-8 mb-12 md:mb-16">
+            <EmblaCarousel slides={featureCards} options={OPTIONS} />
         </div>
 
-        {alternatingSections.map((sec, idx) => {
+        {alternatingSections.map((sec) => {
           const imageBlock = (
-            <div className="flex justify-center md:justify-end">
+            <div className={`md:flex-1 flex justify-center ${sec.imageFirst ? "md:justify-end" : "md:justify-start"}`}>
               <div className="bg-white rounded-2xl p-6 shadow-2xl transform -translate-y-2">
                 <div className="overflow-hidden rounded-lg">
                   <img src={sec.image} alt={sec.imageAlt} className="block w-[520px] max-w-full h-auto" />
@@ -105,7 +123,7 @@ export function FeatureSection() {
             </div>
           );
           const textBlock = (
-            <div>
+            <div className="md:flex-1">
               <h3 className="text-2xl font-bold mb-4">{sec.title}</h3>
               <p className="text-muted-foreground mb-6">{sec.description}</p>
               <ul className="space-y-3 text-muted-foreground">
@@ -119,9 +137,14 @@ export function FeatureSection() {
             </div>
           );
           return (
-            <div key={sec.title} className="grid md:grid-cols-2 items-center gap-8 md:gap-10 mb-12 md:mb-16">
-              {sec.imageFirst ? imageBlock : textBlock}
-              {sec.imageFirst ? textBlock : imageBlock}
+            <div
+              key={sec.title}
+              className={`flex flex-col items-center gap-8 md:gap-10 mb-12 md:mb-16 ${
+                sec.imageFirst ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+            >
+              {imageBlock}
+              {textBlock}
             </div>
           );
         })}
