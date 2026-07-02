@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { EmblaOptionsType } from 'embla-carousel'
 import EmblaCarousel from './FeaturesCarousel';
 
@@ -6,42 +7,42 @@ type FeatureCard = { title: string; description: string; iconBg: string; icon: R
 const featureCards: FeatureCard[] = [
   {
     title: "Dashboard Inteligente",
-    description: "Visualize métricas importantes em tempo real com gráficos e estatísticas detalhadas.",
-    iconBg: "bg-blue-50",
+    description: "Visualize métricas críticas em tempo real com leitura rápida e apresentação mais executiva.",
+    iconBg: "bg-[#edf4ff]",
     icon: (
-      <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7h18M3 12h18M3 17h18"></path></svg>
+      <svg className="w-7 h-7 text-[#0b2c77]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7h18M3 12h18M3 17h18"></path></svg>
     ),
   },
   {
     title: "Gestão de Associados",
-    description: "Cadastre e gerencie associados e dependentes com informações completas e organizadas.",
-    iconBg: "bg-green-50",
+    description: "Cadastre e organize associados e dependentes com dados claros e histórico centralizado.",
+    iconBg: "bg-[#eef3ff]",
     icon: (
-      <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-3-3h-2M9 20H4v-2a3 3 0 013-3h2m0-6a4 4 0 100-8 4 4 0 000 8z"></path></svg>
+      <svg className="w-7 h-7 text-[#1d4ed8]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-3-3h-2M9 20H4v-2a3 3 0 013-3h2m0-6a4 4 0 100-8 4 4 0 000 8z"></path></svg>
     ),
   },
   {
     title: "Pagamentos Online",
-    description: "Cobrança completa com múltiplos métodos de pagamento e controle de inadimplência.",
-    iconBg: "bg-purple-50",
+    description: "Cobrança completa com múltiplos meios de pagamento e acompanhamento de inadimplência.",
+    iconBg: "bg-[#edf4ff]",
     icon: (
-      <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
+      <svg className="w-7 h-7 text-[#0b2c77]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
     ),
   }, 
   {
     title: "Personalização de Planos",
-    description: "Ofereça diferentes planos de associação com benefícios exclusivos para cada categoria.",
-    iconBg: "bg-yellow-50",
+    description: "Ofereça diferentes planos de associação com regras e benefícios por categoria.",
+    iconBg: "bg-[#eef3ff]",
     icon: (
-      <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
+      <svg className="w-7 h-7 text-[#1d4ed8]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
     ),
   },  
   {
     title: "Controle de permissões",
-    description: "Defina diferentes níveis de acesso para administradores, gerentes e associados.",
-    iconBg: "bg-yellow-50",
+    description: "Defina níveis de acesso para administradores, equipe e associados com segurança.",
+    iconBg: "bg-[#edf4ff]",
     icon: (
-      <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
+      <svg className="w-7 h-7 text-[#0b2c77]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c.667 0 1.333.667 1.333 1.333S12.667 10.667 12 10.667 10.667 10 10.667 9.333 11.333 8 12 8zM5 20h14v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2z"></path></svg>
     ),
   },
 ];
@@ -59,7 +60,7 @@ const alternatingSections: AlternatingSection[] = [
   {
     title: "Dashboard Completo com Estatísticas",
     description:
-      "Tenha uma visão geral completa da sua associação com gráficos de receita, crescimento de membros, atividades recentes e ações rápidas.",
+      "Tenha uma visão completa da operação com gráficos de receita, crescimento de membros e ações rápidas.",
     bullets: ["Estatísticas em tempo real", "Gráficos de receita e crescimento", "Atividades recentes e notificações"],
     image: "/system_preview.webp",
     imageAlt: "dashboard screenshot",
@@ -68,7 +69,7 @@ const alternatingSections: AlternatingSection[] = [
   {
     title: "Gestão Completa de Associados",
     description:
-      "Cadastre e gerencie todos os seus associados e dependentes com informações detalhadas, status de pagamento e histórico completo.",
+      "Cadastre e gerencie associados e dependentes com informações detalhadas, status e histórico.",
     bullets: ["Cadastro completo de associados", "Gestão de dependentes", "Filtros avançados e busca"],
     image: "/associates.webp",
     imageAlt: "associates screenshot",
@@ -76,7 +77,7 @@ const alternatingSections: AlternatingSection[] = [
   }, 
   {
     title: "Gestão Completa de Pagamentos",
-    description:"Cadastre e gerencie todos os pagamentos de seus associados com facilidade, oferecendo múltiplos métodos de pagamento e controle de inadimplência.",
+    description:"Cadastre e acompanhe pagamentos com facilidade, múltiplos métodos e controle de inadimplência.",
     bullets: ["Cadastro completo de pagamentos", "Gestão de métodos de pagamento", "Controle de inadimplência"],
     image: "/payments.webp",
     imageAlt: "payments screenshot",
@@ -93,18 +94,19 @@ const CheckIcon = (
 );
 
 const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 8
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 
 export function FeatureSection() {
   return (
-  <section id="features" className="container max-w-6xl mx-auto py-16 md:py-20 px-4 sm:px-6 scroll-mt-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold">Funcionalidades Completas</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Tudo que você precisa para gerenciar sua associação de forma eficiente e profissional
+  <section id="features" className="container mx-auto max-w-6xl scroll-mt-16 px-4 py-16 sm:px-6 md:py-24">
+        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d7e2ef] bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0b2c77] shadow-sm">
+            Funcionalidades essenciais
+          </div>
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">Tudo o que sua associação precisa para operar com mais segurança</h2>
+          <p className="mt-3 text-muted-foreground">
+            Estrutura pensada para reduzir ruído operacional, melhorar o controle e transmitir profissionalismo ao associado.
           </p>
         </div>
 
@@ -115,16 +117,16 @@ export function FeatureSection() {
         {alternatingSections.map((sec) => {
           const imageBlock = (
             <div className={`md:flex-1 flex justify-center ${sec.imageFirst ? "md:justify-end" : "md:justify-start"}`}>
-              <div className="bg-white rounded-2xl p-6 shadow-2xl transform -translate-y-2">
+              <div className="rounded-[1.75rem] border border-white/80 bg-white p-5 shadow-[0_20px_70px_rgba(11,44,119,0.08)] md:p-6">
                 <div className="overflow-hidden rounded-lg">
-                  <img src={sec.image} alt={sec.imageAlt} className="block w-[520px] max-w-full h-auto" />
+                  <Image src={sec.image} alt={sec.imageAlt} width={520} height={320} className="block w-[520px] max-w-full h-auto" />
                 </div>
               </div>
             </div>
           );
           const textBlock = (
             <div className="md:flex-1">
-              <h3 className="text-2xl font-bold mb-4">{sec.title}</h3>
+              <h3 className="mb-4 font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-slate-950">{sec.title}</h3>
               <p className="text-muted-foreground mb-6">{sec.description}</p>
               <ul className="space-y-3 text-muted-foreground">
                 {sec.bullets.map((b) => (
@@ -139,7 +141,7 @@ export function FeatureSection() {
           return (
             <div
               key={sec.title}
-              className={`flex flex-col items-center gap-8 md:gap-10 mb-12 md:mb-16 ${
+              className={`mb-12 flex flex-col items-center gap-8 md:mb-16 md:gap-10 ${
                 sec.imageFirst ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >

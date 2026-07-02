@@ -1,12 +1,18 @@
+import Link from "next/link";
+
 export function FooterSection() {
     return (
-              <footer className="bg-slate-900 text-slate-200 py-16">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+              <footer className="bg-slate-950 text-slate-200 py-16">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-primary">SUA LOGO</h3>
+              <img
+                src="/assets/logo_associa_mais_2026.png"
+                alt="Logo Associa Mais"
+                className="h-14 w-auto"
+              />
               <p className="mt-4 text-sm text-slate-300 max-w-xs">
-                Plataforma completa para gestão de associações modernas e eficientes.
+                Plataforma completa para gestão de associações com mais clareza, controle e confiança.
               </p>
 
               <div className="flex items-center gap-3 mt-4">
@@ -23,19 +29,19 @@ export function FooterSection() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Produto</h4>
+              <h4 className="mb-4 font-[family-name:var(--font-space-grotesk)] font-semibold">Produto</h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li>Funcionalidades</li>
-                <li>Integrações</li>
-                <li>Dashboard</li>
-                <li>Preços</li>
+                <li><Link className="hover:text-white" href="/#features">Funcionalidades</Link></li>
+                <li><Link className="hover:text-white" href="/#integrations">Integrações</Link></li>
+                <li><Link className="hover:text-white" href="/#home">Dashboard</Link></li>
+                <li><Link className="hover:text-white" href="/#plans">Preços</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Suporte</h4>
+              <h4 className="mb-4 font-[family-name:var(--font-space-grotesk)] font-semibold">Suporte</h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li>Contato</li>
+                <li><Link className="hover:text-white" href="/#contact-specialist">Contato</Link></li>
                 <li>Documentação</li>
                 <li>Tutoriais</li>
                 <li>FAQ</li>
@@ -43,16 +49,16 @@ export function FooterSection() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Links Rápidos</h4>
+              <h4 className="mb-4 font-[family-name:var(--font-space-grotesk)] font-semibold">Links rápidos</h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li>Entrar</li>
-                <li>Começar Agora</li>
+                <li><Link className="hover:text-white" href="/onboarding">Entrar</Link></li>
+                <li><Link className="hover:text-white" href="/#plans">Começar agora</Link></li>
               </ul>
             </div>
           </div>
 
           <div className="mt-8 border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-400">
-            <div>© {new Date().getFullYear()} Sócio Hub. Todos os direitos reservados.</div>
+            <div>© {new Date().getFullYear()} Associa Mais. Todos os direitos reservados.</div>
          
           </div>
         </div>

@@ -40,8 +40,14 @@ export const usePrevNextButtons = (
   useEffect(() => {
     if (!emblaApi) return
 
-    onSelect(emblaApi)
-    emblaApi.on('reInit', onSelect).on('select', onSelect)
+    const updateButtons = () => onSelect(emblaApi)
+    const frame = window.requestAnimationFrame(updateButtons)
+    emblaApi.on('reInit', updateButtons).on('select', updateButtons)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      emblaApi.off('reInit', updateButtons).off('select', updateButtons)
+    }
   }, [emblaApi, onSelect])
 
   return {
